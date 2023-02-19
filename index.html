@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Earthquakes</title>
+    <link href="output.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100">
+    <nav class="sticky top-0 z-50 bg-gray-800 text-white p-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold" href="#">Earthquakes API</h1>
+      <a class="text-white" href="https://earthquake.usgs.gov/" target="_blank">Data provided by USGS</a>
+    </nav>
+    <div class="container mx-auto my-4">
+      <h1 class="text-center text-4xl font-bold mb-4">Earthquakes</h1>
+      <div id="earthquake-list" class="bg-white rounded-lg shadow-lg p-4"></div>
+      <nav aria-label="Page navigation" class="flex justify-center m-10">
+        <ul class="pagination flex">
+        </ul>
+      </nav>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
