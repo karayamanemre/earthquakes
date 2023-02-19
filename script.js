@@ -74,7 +74,7 @@ function showPage(earthquakes, pageNumber) {
         ? 'earthquake bg-gray-400 text-gray-800 card p-3'
         : 'earthquake card p-3';
     return `
-      <div class="${earthquakeClass} bg-gray-200 m-4 hover:shadow-lg transition duration-500 ease-in-out" id="${e.id}">
+      <div class="${earthquakeClass} cursor-pointer bg-gray-200 m-4 hover:shadow-lg transition duration-500 ease-in-out" id="${e.id}">
         <h2 class="font-bold">${parseFloat(magnitude).toFixed(2)}</h2><h3>${location}</h3>
         <p>${time}</p>
       </div>
