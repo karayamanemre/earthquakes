@@ -1,6 +1,6 @@
 # Earthquakes
 
-This is a simple web application built with JavaScript, [Tailwind CSS](https://tailwindcss.com/), and [LeafletJS](https://leafletjs.com/)that fetches earthquake data from the [USGS API](https://earthquake.usgs.gov/fdsnws/event/1/) and displays it in a user-friendly way.
+This is a simple web application built with JavaScript, [Tailwind CSS](https://tailwindcss.com/), and [LeafletJS](https://leafletjs.com/) that fetches earthquake data from the [USGS API](https://earthquake.usgs.gov/fdsnws/event/1/) and displays it in a user-friendly way.
 
 ## Features
 
