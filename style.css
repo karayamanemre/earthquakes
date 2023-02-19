@@ -8,3 +8,7 @@
     font-family: 'p22-mackinac-pro', system-ui, sans-serif;
   }
 }
+
+.container {
+  min-height: 100svh;
+}

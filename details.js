@@ -2,8 +2,9 @@ const locationEl = document.getElementById('earthquake-location');
 const timeEl = document.getElementById('earthquake-time');
 const magnitudeEl = document.getElementById('earthquake-magnitude');
 const depthEl = document.getElementById('earthquake-depth');
-const earthquakeLocation = localStorage.getItem('location');
 const tsunamiEl = document.getElementById('earthquake-tsunami');
+const linkEl = document.createElement('a');
+const earthquakeLocation = localStorage.getItem('location');
 const tsunamiWarning = localStorage.getItem('tsunami');
 let latitude = parseFloat(localStorage.getItem('latitude'));
 let longitude = parseFloat(localStorage.getItem('longitude'));
@@ -17,7 +18,7 @@ if (isNaN(longitude)) {
   longitude = 0;
 }
 
-document.getElementById('earthquake-location').textContent = earthquakeLocation;
+locationEl.textContent = earthquakeLocation;
 
 const map = L.map('map').setView([latitude, longitude], 4);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -26,14 +27,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 L.marker([latitude, longitude]).addTo(map);
 
-locationEl.textContent = localStorage.getItem('location');
+locationEl.textContent = earthquakeLocation;
 timeEl.textContent = localStorage.getItem('time');
-magnitudeEl.textContent = `Magnitude: ${localStorage.getItem('magnitude')}`;
+magnitudeEl.textContent = `Magnitude: ${parseFloat(localStorage.getItem('magnitude')).toFixed(2)}`;
 depthEl.textContent = `Depth: ${localStorage.getItem('depth')} km`;
-tsunamiEl.textContent = `Tsunami Warning: ${localStorage.getItem('tsunami') === '1' ? 'Yes' : 'No'}`;
+tsunamiEl.textContent = `Tsunami Warning: ${tsunamiWarning === '1' ? 'Yes' : 'No'}`;
 
 const usgsLink = `https://earthquake.usgs.gov/earthquakes/eventpage/${eventId}`;
-const linkEl = document.createElement('a');
 linkEl.href = usgsLink;
 linkEl.target = '_blank';
 linkEl.textContent = 'USGS Event Page';

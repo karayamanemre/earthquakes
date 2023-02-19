@@ -797,6 +797,18 @@ html {
   height: 16rem;
 }
 
+.h-80{
+  height: 20rem;
+}
+
+.h-72{
+  height: 18rem;
+}
+
+.h-96{
+  height: 24rem;
+}
+
 .flex-shrink{
   flex-shrink: 1;
 }
@@ -2325,6 +2337,10 @@ html {
 .content-\[\'this-is-also-valid\]-weirdly-enough\'\]{
   --tw-content: 'this-is-also-valid]-weirdly-enough';
   content: var(--tw-content);
+}
+
+.container {
+  min-height: 100svh;
 }
 
 @media (min-width: 640px){

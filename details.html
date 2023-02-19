@@ -11,25 +11,26 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body class="bg-gray-100">
-    <nav class="bg-gray-800 text-white p-4 flex justify-between items-center">
-      <a class="text-xl font-bold" href="index.html">Earthquakes API</a>
-      <a class="text-white" href="https://earthquake.usgs.gov/" target="_blank">Data provided by USGS</a>
+    <nav class="sticky top-0 z-50 bg-gray-800 text-white p-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold" href="#">Earthquakes API</h1>
     </nav>
-    <div
-      class="container mx-auto my-4 p-4 bg-white rounded-lg shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-xl">
-      <h2 class="text-2xl mb-4">Earthquake Details</h2>
+    <div class="container mx-auto my-4 p-4 bg-white rounded-lg shadow-lg">
+      <a href="index.html"
+        class="bg-blue-800 text-white py-2 px-4 m-4 rounded-lg transition duration-500 ease-in-out transform hover:bg-blue-700">Back
+        to List</a>
+      <h2 class="text-2xl m-4">Earthquake Details</h2>
       <div class="card p-3 my-4">
         <h2 id="earthquake-location" class="text-2xl font-bold mb-2"></h2>
         <p id="earthquake-time" class="text-lg text-gray-700 mb-2"></p>
         <p id="earthquake-magnitude" class="text-lg text-gray-700 mb-2"></p>
         <p id="earthquake-depth" class="text-lg text-gray-700 mb-2"></p>
         <p id="earthquake-tsunami" class="text-lg text-gray-700 mb-2"></p>
-        <div id="map" class="my-4 h-64"></div>
+        <div id="map" class="my-4 h-96"></div>
       </div>
-      <a href="index.html"
-        class="bg-blue-800 text-white py-2 px-4 rounded-lg transition duration-500 ease-in-out transform hover:bg-blue-700 hover:-translate-y-1">Back
-        to List</a>
     </div>
+    <footer class="bg-gray-800 text-white p-4 flex justify-between items-center">
+      <a class="text-white" href="https://earthquake.usgs.gov/" target="_blank">Data provided by USGS</a>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/js/all.min.js"></script>
