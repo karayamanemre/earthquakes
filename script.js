@@ -9,7 +9,7 @@ loadingSpinner.classList.remove('hidden');
 
 let currentPage = 1;
 let selectedContinent = 'all';
-const earthquakesPerPage = 15;
+const earthquakesPerPage = 20;
 
 function fetchEarthquakes() {
   fetch(apiUrl)
