@@ -10,25 +10,22 @@
   <body class="bg-gray-100">
     <header class="sticky top-0 z-50 bg-gray-800 text-white p-4 flex justify-between items-center">
       <h1 class="text-xl font-bold sm:text-lg" href="#">Earthquakes API</h1>
-      <div class="flex justify-between">
-        <label for="continent-selector" class="mr-2 text-sm">Filter by continent</label>
-        <select id="continent-selector"
-          class="px-2 py-1 rounded bg-gray-300 text-gray-700 hover:bg-gray-400 transition duration-500">
-          <option value="all" selected>All</option>
-          <option value="north-america">North America</option>
-          <option value="south-america">South America</option>
-          <option value="europe">Europe</option>
-          <option value="africa">Africa</option>
-          <option value="asia">Asia</option>
-          <option value="oceania">Oceania</option>
-        </select>
-      </div>
+      <select id="continent-selector"
+        class="px-2 py-1 rounded bg-gray-300 text-gray-700 hover:bg-gray-400 transition duration-500">
+        <option selected>Filter by Continent</option>
+        <option value="all">All</option>
+        <option value="north-america">North America</option>
+        <option value="south-america">South America</option>
+        <option value="europe">Europe</option>
+        <option value="africa">Africa</option>
+        <option value="asia">Asia</option>
+        <option value="oceania">Oceania</option>
+      </select>
     </header>
     <div class="container mx-auto my-4">
-      <h2 class="text-center text-xl font-bold mb-4"> Recent Earthquakes</h2>
-      <nav aria-label="Page navigation" class="flex justify-center m-2">
-        <ul id="pagination-1" class="flex flex-wrap justify-center mb-2"></ul>
-      </nav>
+      <h2 class="text-center text-xl font-bold mb-4">Recent Earthquakes</h2>
+      <a href="map.html" class="mx-2">Map View
+      </a>
       <div id="loading-spinner"
         class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50 hidden">
         <svg class="animate-spin h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -40,7 +37,7 @@
       </div>
       <div id="earthquake-list" class="bg-white rounded-lg shadow-lg p-4"></div>
       <nav aria-label="Page navigation" class="flex justify-center mx-2 my-4">
-        <ul id="pagination-2" class="pagination flex flex-wrap justify-center">
+        <ul id="pagination" class="pagination flex flex-wrap justify-center">
         </ul>
       </nav>
     </div>

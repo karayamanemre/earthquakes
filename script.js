@@ -1,7 +1,6 @@
 const apiUrl = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson';
 const earthquakeListElement = document.getElementById('earthquake-list');
-const paginationElement1 = document.getElementById('pagination-1');
-const paginationElement2 = document.getElementById('pagination-2');
+const paginationElement = document.getElementById('pagination');
 const loadingSpinner = document.getElementById('loading-spinner');
 const continentSelector = document.getElementById('continent-selector');
 const noEarthquakesText = 'No earthquakes found for the selected continent.';
@@ -10,7 +9,7 @@ loadingSpinner.classList.remove('hidden');
 
 let currentPage = 1;
 let selectedContinent = 'all';
-const earthquakesPerPage = 20;
+const earthquakesPerPage = 15;
 
 function fetchEarthquakes() {
   fetch(apiUrl)
@@ -29,8 +28,7 @@ function fetchEarthquakes() {
 
       if (earthquakes.length === 0) {
         earthquakeListElement.innerHTML = `<p>${noEarthquakesText}</p>`;
-        paginationElement1.innerHTML = '';
-        paginationElement2.innerHTML = '';
+        paginationElement.innerHTML = '';
         return;
       }
 
@@ -53,11 +51,8 @@ function fetchEarthquakes() {
         updatePagination();
       }
 
-      paginationElement1.innerHTML = pageNumbers.map(createPageLink).join('');
-      paginationElement1.addEventListener('click', handlePageLinkClick);
-
-      paginationElement2.innerHTML = pageNumbers.map(createPageLink).join('');
-      paginationElement2.addEventListener('click', handlePageLinkClick);
+      paginationElement.innerHTML = pageNumbers.map(createPageLink).join('');
+      paginationElement.addEventListener('click', handlePageLinkClick);
 
       earthquakeListElement.addEventListener('click', event => {
         const target = event.target.closest('.earthquake');

@@ -24,6 +24,6 @@ timeEl.textContent = localStorage.getItem('time');
 magnitudeEl.textContent = `Magnitude: ${parseFloat(localStorage.getItem('magnitude')).toFixed(2)}`;
 depthEl.textContent = `Depth: ${localStorage.getItem('depth')} km`;
 tsunamiEl.textContent = `Tsunami Warning: ${tsunamiWarning === '1' ? 'Yes' : 'No'}`;
-linkEl.innerHTML = `<a href="https://earthquake.usgs.gov/earthquakes/eventpage/${eventId}" target="_blank">USGS Event Page</a>`;
+linkEl.innerHTML = `<a href="https://earthquake.usgs.gov/earthquakes/eventpage/${eventId}" target="_blank">USGS Earthquake Details</a>`;
 
 document.querySelector('.card').appendChild(linkEl);

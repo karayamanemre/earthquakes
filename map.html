@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquake Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <link href="output.css" rel="stylesheet">
+    <style>
+      #map {
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="sticky top-0 z-50 bg-gray-800 text-white p-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold" href="index.html">Earthquakes API</h1>
+    </header>
+    <div class="container mx-auto my-4 max-w-max">
+      <h2 class="text-center text-xl font-bold my-4">Earthquake Map</h2>
+      <a href="index.html" class="mx-2">Back to List View
+      </a>
+      <div class="container mx-auto my-4 p-4 bg-white rounded-lg shadow-lg">
+        <div class="card p-3">
+          <div id="map" class="w-auto rounded-lg"></div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-gray-800 text-white p-4 flex justify-between items-center">
+      <a class="text-white" href="https://earthquake.usgs.gov/" target="_blank">Data provided by USGS</a>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="map.js"></script>
+  </body>
+</html>

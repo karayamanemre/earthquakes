@@ -8,23 +8,29 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
       integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="output.css">
+    <style>
+      #map {
+        height: 400px;
+      }
+    </style>
   </head>
   <body class="bg-gray-100">
     <nav class="sticky top-0 z-50 bg-gray-800 text-white p-4 flex justify-between items-center">
       <h1 class="text-xl font-bold" href="#">Earthquakes API</h1>
     </nav>
-    <div class="container mx-auto my-4 p-4 bg-white rounded-lg shadow-lg">
-      <a href="index.html"
-        class="bg-gray-800 text-white p-2 m-3 rounded-lg transition duration-500 ease-in-out transform hover:bg-gray-700">Back
-        to List</a>
-      <div class="card p-3">
-        <h2 id="earthquake-location" class="text-2xl font-bold mb-2"></h2>
-        <p id="earthquake-time" class="text-lg text-gray-700 mb-2"></p>
-        <p id="earthquake-magnitude" class="text-lg text-gray-700 mb-2"></p>
-        <p id="earthquake-depth" class="text-lg text-gray-700 mb-2"></p>
-        <p id="earthquake-tsunami" class="text-lg text-gray-700 mb-2"></p>
-        <div id="map" class="h-96 rounded-lg"></div>
+    <div class="container mx-auto my-4">
+      <h2 class="text-center text-xl font-bold mb-4">Earthquake Details</h2>
+      <a href="index.html" class="mx-2">Back to List View</a>
+      <div class="container mx-auto my-4 p-4 bg-white rounded-lg shadow-lg">
+        <div class="card p-3">
+          <h2 id="earthquake-location" class="text-2xl font-bold mb-2"></h2>
+          <p id="earthquake-time" class="text-lg text-gray-700 mb-2"></p>
+          <p id="earthquake-magnitude" class="text-lg text-gray-700 mb-2"></p>
+          <p id="earthquake-depth" class="text-lg text-gray-700 mb-2"></p>
+          <p id="earthquake-tsunami" class="text-lg text-gray-700 mb-2"></p>
+          <div id="map" class="rounded-lg"></div>
+        </div>
       </div>
     </div>
     <footer class="bg-gray-800 text-white p-4 flex justify-between items-center">
