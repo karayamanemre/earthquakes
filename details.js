@@ -14,16 +14,21 @@ locationEl.textContent = earthquakeLocation;
 
 const map = L.map('map').setView([latitude, longitude], 4);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors',
-  maxZoom: 18
+  attribution:
+    'Map data &copy; <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors',
+  maxZoom: 18,
 }).addTo(map);
 L.marker([latitude, longitude]).addTo(map);
 
 locationEl.textContent = earthquakeLocation;
 timeEl.textContent = localStorage.getItem('time');
-magnitudeEl.textContent = `Magnitude: ${parseFloat(localStorage.getItem('magnitude')).toFixed(2)}`;
+magnitudeEl.textContent = `Magnitude: ${parseFloat(
+  localStorage.getItem('magnitude'),
+).toFixed(2)}`;
 depthEl.textContent = `Depth: ${localStorage.getItem('depth')} km`;
-tsunamiEl.textContent = `Tsunami Warning: ${tsunamiWarning === '1' ? 'Yes' : 'No'}`;
+tsunamiEl.textContent = `Tsunami Warning: ${
+  tsunamiWarning === '1' ? 'Yes' : 'No'
+}`;
 linkEl.innerHTML = `<a href="https://earthquake.usgs.gov/earthquakes/eventpage/${eventId}" target="_blank">USGS Earthquake Details</a>`;
 
 document.querySelector('.card').appendChild(linkEl);
