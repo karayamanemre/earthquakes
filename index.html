@@ -9,7 +9,20 @@
   </head>
   <body class="bg-gray-100">
     <header class="sticky top-0 z-50 bg-gray-800 text-white p-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold" href="#">Earthquakes API</h1>
+      <h1 class="text-xl font-bold sm:text-lg" href="#">Earthquakes API</h1>
+      <div class="flex justify-between">
+        <label for="continent-selector" class="mr-2 text-sm">Filter by continent</label>
+        <select id="continent-selector"
+          class="px-2 py-1 rounded bg-gray-300 text-gray-700 hover:bg-gray-400 transition duration-500">
+          <option value="all" selected>All</option>
+          <option value="north-america">North America</option>
+          <option value="south-america">South America</option>
+          <option value="europe">Europe</option>
+          <option value="africa">Africa</option>
+          <option value="asia">Asia</option>
+          <option value="oceania">Oceania</option>
+        </select>
+      </div>
     </header>
     <div class="container mx-auto my-4">
       <h2 class="text-center text-xl font-bold mb-4"> Recent Earthquakes</h2>

@@ -3,17 +3,26 @@ const earthquakeListElement = document.getElementById('earthquake-list');
 const paginationElement1 = document.getElementById('pagination-1');
 const paginationElement2 = document.getElementById('pagination-2');
 const loadingSpinner = document.getElementById('loading-spinner');
+const continentSelector = document.getElementById('continent-selector');
 
 loadingSpinner.classList.remove('hidden');
 
 let currentPage = 1;
+let selectedContinent = 'all';
 const earthquakesPerPage = 20;
 
 function fetchEarthquakes() {
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-      const earthquakes = data.features;
+      let earthquakes = data.features;
+      if (selectedContinent !== 'all') {
+        earthquakes = earthquakes.filter(earthquake => {
+          const latitude = earthquake.geometry.coordinates[1];
+          const longitude = earthquake.geometry.coordinates[0];
+          return isPointInContinent(latitude, longitude, selectedContinent);
+        });
+      }
       const numPages = Math.ceil(earthquakes.length / earthquakesPerPage);
       const pageNumbers = Array.from({length: numPages}, (_, i) => i + 1);
       showPage(earthquakes, currentPage);
@@ -83,8 +92,6 @@ function fetchEarthquakes() {
           const time = new Date(properties.time).toLocaleString();
       const earthquakeClass = magnitude >= 6
         ? 'earthquake bg-black text-white card p-3'
-        : magnitude >= 5
-          ? 'earthquake bg-gray-500 card p-3'
           : magnitude >= 4
             ? 'earthquake bg-gray-400 card p-3'
             : 'earthquake card p-3';
@@ -109,6 +116,33 @@ function fetchEarthquakes() {
       }
     });
   }
+
+  function isPointInContinent(latitude, longitude, continent) {
+    switch (continent) {
+      case 'north-america':
+        return latitude > 7.5 && latitude < 84.0 && longitude > -172.5 && longitude < -47.5;
+      case 'south-america':
+        return latitude > -56.0 && latitude < 12.0 && longitude > -90.0 && longitude < -35.0;
+      case 'europe':
+        return latitude > 34.0 && latitude < 72.0 && longitude > -25.0 && longitude < 45.0;
+      case 'africa':
+        return latitude > -38.0 && latitude < 38.0 && longitude > -26.0 && longitude < 60.0;
+      case 'asia':
+        return latitude > 0.0 && latitude < 70.0 && longitude > 25.0 && longitude < 180.0;
+      case 'oceania':
+        return latitude > -50.0 && latitude < 0.0 && longitude > 110.0 && longitude < -180.0;
+      default:
+        return true;
+    }
+  }
+
+  function handleContinentChange(event) {
+    selectedContinent = event.target.value;
+    currentPage = 1;
+    fetchEarthquakes();
+  }
+
+  continentSelector.addEventListener('change', handleContinentChange);
 }
    
 fetchEarthquakes();
