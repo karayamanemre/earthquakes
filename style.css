@@ -12,3 +12,11 @@
 .container {
   min-height: 100svh;
 }
+
+ul {
+  gap: 5px;
+}
+
+li {
+  margin-bottom: 7px;
+}

@@ -1,12 +1,11 @@
 const apiUrl = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson';
 const earthquakeListElement = document.getElementById('earthquake-list');
 const paginationElement = document.querySelector('.pagination');
-const loaderElement = document.getElementById('loader');
+const loadingSpinner = document.getElementById('loading-spinner');
+loadingSpinner.classList.remove('hidden');
 
 let currentPageNumber = 1;
 const earthquakesPerPage = 20;
-
-loaderElement.style.display = 'flex';
 
 fetch(apiUrl)
   .then(response => response.json())
@@ -17,8 +16,8 @@ fetch(apiUrl)
     showPage(earthquakes, currentPageNumber);
 
     paginationElement.innerHTML = pageNumbers.map(pageNumber => `
-      <li class="page-item${pageNumber === currentPageNumber ? ' active' : ''} mr-1">
-        <a class="page-link py-2 px-4 rounded bg-gray-300 text-gray-700 hover:bg-gray-400 transition duration-500" href="#${pageNumber}">${pageNumber}</a>
+      <li class="page-item${pageNumber === currentPageNumber ? ' active' : ''}">
+        <a class="page-link p-2 rounded bg-gray-300 text-gray-700 hover:bg-gray-400 transition duration-500" href="#${pageNumber}">${pageNumber}</a>
       </li>
     `).join('');
 
@@ -52,7 +51,7 @@ fetch(apiUrl)
         window.location.href = 'details.html';
       }
     });
-		loaderElement.style.display = 'none';
+    loadingSpinner.classList.add('hidden');
   })
   .catch(error => {
     console.error(error);
