@@ -84,12 +84,12 @@ function fetchEarthquakes() {
       const earthquakeClass = magnitude >= 6
         ? 'earthquake bg-black text-white card p-3'
         : magnitude >= 5
-          ? 'earthquake bg-gray-400 card p-3'
+          ? 'earthquake bg-gray-500 card p-3'
           : magnitude >= 4
-            ? 'earthquake bg-gray-300 card p-3'
+            ? 'earthquake bg-gray-400 card p-3'
             : 'earthquake card p-3';
       return `
-        <div class="${earthquakeClass} cursor-pointer bg-gray-200 mb-4 rounded hover:shadow-lg transition duration-500 ease-in-out" id="${earthquake.id}">
+        <div class="${earthquakeClass} cursor-pointer bg-gray-300 mb-4 hover:shadow-lg transition duration-500 ease-in-out" id="${earthquake.id}">
           <h2 class="font-bold">${parseFloat(magnitude).toFixed(2)}</h2><h3>${location}</h3>
           <p>${time}</p>
         </div>
