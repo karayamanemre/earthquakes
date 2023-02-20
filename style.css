@@ -6,6 +6,7 @@
 @layer base {
   html {
     font-family: 'p22-mackinac-pro', system-ui, sans-serif;
+    scroll-behavior: smooth;
   }
 }
 
@@ -14,7 +15,8 @@
 }
 
 ul {
-  gap: 5px;
+  list-style: none;
+  gap: 3px;
 }
 
 li {

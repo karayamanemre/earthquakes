@@ -421,6 +421,7 @@ video {
 
 html {
   font-family: 'p22-mackinac-pro', system-ui, sans-serif;
+  scroll-behavior: smooth;
 }
 
 *, ::before, ::after{
@@ -663,8 +664,8 @@ html {
   margin: 1rem;
 }
 
-.m-10{
-  margin: 2.5rem;
+.m-2{
+  margin: 0.5rem;
 }
 
 .m-1{
@@ -679,6 +680,11 @@ html {
 .my-4{
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.mx-2{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .mb-2{
@@ -1147,7 +1153,8 @@ html {
 }
 
 ul {
-  gap: 5px;
+  list-style: none;
+  gap: 3px;
 }
 
 li {
