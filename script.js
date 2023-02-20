@@ -81,7 +81,7 @@ function showPage(earthquakes, pageNumber) {
     const location = properties.place;
         const time = new Date(properties.time).toLocaleString();
     const earthquakeClass = magnitude >= 6
-      ? 'earthquake bg-black-600 text-white card p-3'
+      ? 'earthquake bg-black-600 text-black card p-3'
       : magnitude >= 4.5
         ? 'earthquake bg-gray-400 text-gray-800 card p-3'
         : 'earthquake card p-3';
