@@ -109,8 +109,8 @@ function fetchEarthquakes() {
         }">
             <h2 class="font-bold">${parseFloat(magnitude).toFixed(
               2,
-            )}</h2><h3>${location}</h3>
-            <p>${time}</p>
+            )}</h2><h3><i class="fa-solid fa-location-dot"></i> ${location}</h3>
+            <p><i class="fa-regular fa-calendar-days"></i> ${time}</p>
           </div>
         `;
       })
