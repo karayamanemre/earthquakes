@@ -56,7 +56,7 @@ function showMap() {
         localStorage.setItem('depth', earthquake.geometry.coordinates[2]);
         localStorage.setItem('latitude', latitude);
         localStorage.setItem('longitude', longitude);
-        localStorage.setItem('eventId', properties.ids);
+        localStorage.setItem('eventId', earthquake.id);
         localStorage.setItem('tsunami', properties.tsunami);
         window.location.href = 'details.html';
       });
@@ -77,7 +77,7 @@ function showMap() {
         localStorage.setItem('depth', earthquake.geometry.coordinates[2]);
         localStorage.setItem('latitude', latitude);
         localStorage.setItem('longitude', longitude);
-        localStorage.setItem('eventId', properties.ids);
+        localStorage.setItem('eventId', earthquake.id);
         localStorage.setItem('tsunami', properties.tsunami);
         window.location.href = 'details.html';
       });
