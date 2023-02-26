@@ -4,15 +4,15 @@ This is a simple web application built with JavaScript, [Tailwind CSS](https://t
 
 ## Features
 
-- Fetches earthquake data from the USGS API
-- Displays earthquake data with relevant information
-- Displays earthquake locations on a map using Leaflet
-- Designed using Tailwind CSS
+- Fetches earthquake data from the USGS API.
+- Displays earthquake data with relevant information.
+- Displays earthquake locations on a map using Leaflet.
+- Designed using Tailwind CSS.
 
 ## Installation
 
-1. Clone this repository
-2. Open the `index.html` file in your web browser
+1. Clone this repository.
+2. Open the `index.html` file in your web browser.
 
 ## Usage
 
