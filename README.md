@@ -40,7 +40,7 @@ Earthquakes is a web application that displays a list and a map view of recent e
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-(Provide a link to the live demo if available)
+- [Earthquakes](https://karayamanemre.github.io/earthquakes/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -87,8 +87,8 @@ Open the index.html file in your web browser.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **[Filter by magnitude.]**
-- **[Filter by country.]**
+- **Filter by magnitude.**
+- **Filter by country.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
