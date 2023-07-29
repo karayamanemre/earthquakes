@@ -1,51 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recent Earthquakes</title>
-    <link href="output.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-  </head>
-  <body class="bg-gray-200">
-    <header class="sticky top-0 z-50 bg-gray-800 text-white p-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold sm:text-lg" href="#">Earthquakes</h1>
-      <select id="continent-selector"
-        class="px-2 py-1 rounded bg-gray-300 text-gray-700 hover:bg-gray-400 transition duration-500">
-        <option selected>Filter by Continent</option>
-        <option value="all">All</option>
-        <option value="north-america">North America</option>
-        <option value="south-america">South America</option>
-        <option value="europe">Europe</option>
-        <option value="africa">Africa</option>
-        <option value="asia">Asia</option>
-        <option value="oceania">Oceania</option>
-      </select>
-    </header>
-    <div class="container mx-auto my-4">
-      <h2 class="text-center text-xl font-bold mb-4">Recent Earthquakes</h2>
-      <a href="map.html" class="mx-2"><i class="fa-solid fa-map-location-dot"></i> Map View</a>
-      <div id="loading-spinner"
-        class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50 hidden">
-        <svg class="animate-spin h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor"
-            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647zM12 20a8 8 0 008-8h-4a4 4 0 01-4 4v4zm5-3.709A7.962 7.962 0 0120 12h-4c0 3.042-1.135 5.824-3 7.938l3-2.647zM16.97 5.291A7.963 7.963 0 0120 12h4c0-3.042-1.135-5.824-3-7.938l-3 2.647z">
-          </path>
-        </svg>
-      </div>
-      <div id="earthquake-list" class="bg-white rounded-lg shadow-lg p-4"></div>
-      <nav aria-label="Pagination" class="flex justify-center mx-2 my-4">
-        <ul id="pagination" class="pagination flex flex-wrap justify-center">
-        </ul>
-      </nav>
-    </div>
-    <footer class="bg-gray-800 text-white p-4 flex justify-between items-center">
-      <a class="text-white" href="https://earthquake.usgs.gov/" target="_blank">Data provided by USGS</a>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Recent Earthquakes</title>
+		<link
+			href="output.css"
+			rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+			integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+	</head>
+	<body class="bg-gray-200">
+		<header
+			class="sticky top-0 z-50 bg-gray-800 text-white p-4 flex justify-between items-center">
+			<h1
+				class="text-xl font-bold sm:text-lg"
+				href="#">
+				Earthquakes
+			</h1>
+			<select
+				id="continent-selector"
+				class="px-2 py-1 rounded bg-gray-300 text-gray-700 hover:bg-gray-400 transition duration-500">
+				<option selected>Filter by Continent</option>
+				<option value="all">All</option>
+				<option value="north-america">North America</option>
+				<option value="south-america">South America</option>
+				<option value="europe">Europe</option>
+				<option value="africa">Africa</option>
+				<option value="asia">Asia</option>
+				<option value="oceania">Oceania</option>
+			</select>
+		</header>
+		<div class="container mx-auto my-4">
+			<h2 class="text-center text-xl font-bold mb-4">Recent Earthquakes</h2>
+			<a
+				href="map.html"
+				class="mx-2"
+				><i class="fa-solid fa-map-location-dot"></i> Map View</a
+			>
+			<div
+				id="loading-spinner"
+				class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50 hidden">
+				<svg
+					class="animate-spin h-8 w-8 text-white"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24">
+					<circle
+						class="opacity-25"
+						cx="12"
+						cy="12"
+						r="10"
+						stroke="currentColor"
+						stroke-width="4"></circle>
+					<path
+						class="opacity-75"
+						fill="currentColor"
+						d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647zM12 20a8 8 0 008-8h-4a4 4 0 01-4 4v4zm5-3.709A7.962 7.962 0 0120 12h-4c0 3.042-1.135 5.824-3 7.938l3-2.647zM16.97 5.291A7.963 7.963 0 0120 12h4c0-3.042-1.135-5.824-3-7.938l-3 2.647z"></path>
+				</svg>
+			</div>
+			<div
+				id="earthquake-list"
+				class="bg-white rounded-lg shadow-lg p-4"></div>
+			<nav
+				aria-label="Pagination"
+				class="flex justify-center mx-2 my-4">
+				<ul
+					id="pagination"
+					class="pagination flex flex-wrap justify-center"></ul>
+			</nav>
+		</div>
+		<footer
+			class="bg-gray-800 text-white p-4 flex justify-between items-center">
+			<a
+				class="text-white"
+				href="https://earthquake.usgs.gov/"
+				target="_blank"
+				>All data provided by USGS</a
+			>
+		</footer>
+		<script src="script.js"></script>
+	</body>
 </html>
