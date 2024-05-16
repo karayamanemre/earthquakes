@@ -43,15 +43,35 @@
 			<h2 class="my-4 text-xl font-bold text-center">Earthquake Map</h2>
 			<a
 				href="index.html"
-				class="mx-2"
-				><i class="fa-solid fa-list"></i> List View</a
+				class="flex items-center p-1 transition-all duration-500 bg-gray-300 rounded-md hover:bg-gray-200 w-max"
+				><svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="icon icon-tabler icon-tabler-list"
+					width="32"
+					height="32"
+					viewBox="0 0 24 24"
+					stroke-width="2"
+					stroke="#000000"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round">
+					<path
+						stroke="none"
+						d="M0 0h24v24H0z"
+						fill="none" />
+					<path d="M9 6l11 0" />
+					<path d="M9 12l11 0" />
+					<path d="M9 18l11 0" />
+					<path d="M5 6l0 .01" />
+					<path d="M5 12l0 .01" />
+					<path d="M5 18l0 .01" />
+				</svg>
+				<span class="ml-2 text-lg">List View</span></a
 			>
-			<div class="w-full p-4 mx-auto my-4 bg-white rounded-lg shadow-lg">
-				<div class="p-3 card">
-					<div
-						id="map"
-						class="border-2 border-gray-300 rounded-lg drop-shadow-xl"></div>
-				</div>
+			<div class="w-full p-2 mt-2 bg-white rounded-lg shadow-lg">
+				<div
+					id="map"
+					class="border-2 border-gray-300 rounded-lg drop-shadow-xl"></div>
 			</div>
 		</div>
 		<footer

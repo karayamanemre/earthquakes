@@ -44,8 +44,30 @@
 			<h2 class="mb-4 text-xl font-bold text-center">Recent Earthquakes</h2>
 			<a
 				href="map.html"
-				class="py-4 mx-2 mb-4"
-				><i class="fa-solid fa-map-location-dot"></i> Map View</a
+				class="flex items-center p-1 transition-all duration-500 bg-gray-300 rounded-md hover:bg-gray-200 w-max"
+				><svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="icon icon-tabler icon-tabler-map-2"
+					width="32"
+					height="32"
+					viewBox="0 0 24 24"
+					stroke-width="2"
+					stroke="#000000"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round">
+					<path
+						stroke="none"
+						d="M0 0h24v24H0z"
+						fill="none" />
+					<path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5" />
+					<path d="M9 4v13" />
+					<path d="M15 7v5.5" />
+					<path
+						d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z" />
+					<path d="M19 18v.01" />
+				</svg>
+				<span class="ml-2 text-lg">Map View</span></a
 			>
 			<div
 				id="loading-spinner"
