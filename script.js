@@ -104,7 +104,7 @@ function fetchEarthquakes() {
 						? "earthquake bg-gray-400 card p-3"
 						: "earthquake card p-3";
 				return `
-          <div class="${earthquakeClass} cursor-pointer bg-gray-300 mb-4 hover:drop-shadow-md transition duration-500 ease-in-out rounded-lg" id="${
+          <div class="${earthquakeClass} border cursor-pointer bg-gray-300 mb-4 hover:drop-shadow-md transition duration-500 ease-in-out rounded-lg" id="${
 					earthquake.id
 				}">
             <h2 class="font-bold">Magnitude: ${parseFloat(magnitude).toFixed(
