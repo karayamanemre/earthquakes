@@ -109,8 +109,29 @@ function fetchEarthquakes() {
 				}">
             <h2 class="font-bold">Magnitude: ${parseFloat(magnitude).toFixed(
 							2
-						)}</h2><h3><i class="fa-solid fa-location-dot"></i> ${location}</h3>
-            <p><i class="fa-regular fa-calendar-days"></i> ${time}</p>
+						)}</h2><h3 class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-current-location" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+						<path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+						<path d="M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0" />
+						<path d="M12 2l0 2" />
+						<path d="M12 20l0 2" />
+						<path d="M20 12l2 0" />
+						<path d="M2 12l2 0" />
+					</svg><span class="ml-2">${location}</span></h3>
+            <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-month" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+						<path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+						<path d="M16 3v4" />
+						<path d="M8 3v4" />
+						<path d="M4 11h16" />
+						<path d="M7 14h.013" />
+						<path d="M10.01 14h.005" />
+						<path d="M13.01 14h.005" />
+						<path d="M16.015 14h.005" />
+						<path d="M13.015 17h.005" />
+						<path d="M7.01 17h.005" />
+						<path d="M10.01 17h.005" />
+					</svg><span class="ml-2">${time}</span></p>
           </div>
         `;
 			})

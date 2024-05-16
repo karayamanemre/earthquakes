@@ -31,6 +31,6 @@ depthEl.textContent = `Depth: ${parseFloat(
 tsunamiEl.textContent = `Tsunami Warning: ${
 	tsunamiWarning === "1" ? "Yes" : "No"
 }`;
-linkEl.innerHTML = `<a href="https://earthquake.usgs.gov/earthquakes/eventpage/${eventId}" target="_blank">USGS Earthquake Details</a>`;
+linkEl.innerHTML = `<a href="https://earthquake.usgs.gov/earthquakes/eventpage/${eventId}" target="_blank" class="underline my-2 font-semibold">USGS Earthquake Details</a>`;
 
 document.querySelector(".card").appendChild(linkEl);
