@@ -1,41 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earthquake Map View</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-    <link href="output.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-      #map {
-        margin-top: 50px;
-        height: 400px;
-      }
-    </style>
-  </head>
-  <body class="bg-gray-200">
-    <header class="sticky top-0 z-50 bg-gray-800 text-gray-100 p-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-white">Earthquakes</h1>
-    </header>
-    <div class="container mx-auto my-4">
-      <h2 class="text-center text-xl font-bold my-4">Earthquake Map</h2>
-      <a href="index.html" class="mx-2"><i class="fa-solid fa-list"></i> List View</a>
-      <div class="w-full mx-auto my-4 p-4 bg-white rounded-lg shadow-lg">
-        <div class="card p-3">
-          <div id="map" class="rounded-lg"></div>
-        </div>
-      </div>
-    </div>
-    <footer class="bg-gray-800 text-white p-4 flex justify-between items-center">
-      <a class="text-white" href="https://earthquake.usgs.gov/" target="_blank">Data provided by USGS</a>
-    </footer>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-    <script src="map.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Earthquake Map View</title>
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+			integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+			crossorigin="" />
+		<link
+			href="output.css"
+			rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+			integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<style>
+			#map {
+				margin-top: 50px;
+				height: 400px;
+			}
+		</style>
+	</head>
+	<body class="max-h-screen bg-gray-200">
+		<header
+			class="sticky top-0 z-50 flex items-center justify-between px-4 py-4 text-white bg-gray-800 md:px-48">
+			<h1
+				class="text-xl font-bold sm:text-lg"
+				href="#">
+				Earthquakes
+			</h1>
+		</header>
+		<div class="container px-4 py-4 mx-auto my-4 md:px-20">
+			<h2 class="my-4 text-xl font-bold text-center">Earthquake Map</h2>
+			<a
+				href="index.html"
+				class="mx-2"
+				><i class="fa-solid fa-list"></i> List View</a
+			>
+			<div class="w-full p-4 mx-auto my-4 bg-white rounded-lg shadow-lg">
+				<div class="p-3 card">
+					<div
+						id="map"
+						class="border-2 border-gray-300 rounded-lg drop-shadow-xl"></div>
+				</div>
+			</div>
+		</div>
+		<footer
+			class="flex items-center justify-between px-4 py-4 text-white bg-gray-800 md:px-48">
+			<a
+				class="text-white"
+				href="https://earthquake.usgs.gov/"
+				target="_blank"
+				>Data provided by USGS</a
+			>
+		</footer>
+		<script
+			src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+			integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+			crossorigin=""></script>
+		<script src="map.js"></script>
+	</body>
 </html>

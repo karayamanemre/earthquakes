@@ -21,7 +21,7 @@
 	</head>
 	<body class="bg-gray-200">
 		<header
-			class="sticky top-0 z-50 bg-gray-800 text-white py-4 px-4 md:px-20 flex justify-between items-center">
+			class="sticky top-0 z-50 flex items-center justify-between px-4 py-4 text-white bg-gray-800 md:px-48">
 			<h1
 				class="text-xl font-bold sm:text-lg"
 				href="#">
@@ -29,7 +29,7 @@
 			</h1>
 			<select
 				id="continent-selector"
-				class="px-2 py-1 rounded bg-gray-300 text-gray-700 hover:bg-gray-400 transition duration-500">
+				class="px-2 py-1 text-gray-700 transition duration-500 bg-gray-300 rounded hover:bg-gray-400">
 				<option selected>Filter by Continent</option>
 				<option value="all">All</option>
 				<option value="north-america">North America</option>
@@ -40,18 +40,18 @@
 				<option value="oceania">Oceania</option>
 			</select>
 		</header>
-		<div class="container mx-auto my-4 py-4 px-4 md:px-20">
-			<h2 class="text-center text-xl font-bold mb-4">Recent Earthquakes</h2>
+		<div class="container px-4 py-4 mx-auto my-4 md:px-20">
+			<h2 class="mb-4 text-xl font-bold text-center">Recent Earthquakes</h2>
 			<a
 				href="map.html"
-				class="mx-2"
+				class="py-4 mx-2 mb-4"
 				><i class="fa-solid fa-map-location-dot"></i> Map View</a
 			>
 			<div
 				id="loading-spinner"
-				class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50 hidden">
+				class="fixed top-0 bottom-0 left-0 right-0 z-50 items-center justify-center hidden bg-gray-900 bg-opacity-50">
 				<svg
-					class="animate-spin h-8 w-8 text-white"
+					class="w-8 h-8 text-white animate-spin"
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
 					viewBox="0 0 24 24">
@@ -70,17 +70,17 @@
 			</div>
 			<div
 				id="earthquake-list"
-				class="bg-white rounded-lg shadow-lg py-4 px-4 md:px-20"></div>
+				class="p-4 mt-2 bg-white rounded-lg shadow-lg"></div>
 			<nav
 				aria-label="Pagination"
 				class="flex justify-center mx-2 my-4">
 				<ul
 					id="pagination"
-					class="pagination flex flex-wrap justify-center"></ul>
+					class="flex flex-wrap justify-center pagination"></ul>
 			</nav>
 		</div>
 		<footer
-			class="bg-gray-800 text-white p-4 flex justify-between items-center">
+			class="flex items-center justify-between p-4 text-white bg-gray-800">
 			<a
 				class="text-white"
 				href="https://earthquake.usgs.gov/"

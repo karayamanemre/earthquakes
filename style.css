@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  html {
-    font-family: 'Open Sans', system-ui, sans-serif;
-    scroll-behavior: smooth;
-  }
+	html {
+		font-family: "Montserrat", system-ui, sans-serif;
+		scroll-behavior: smooth;
+	}
 }
 
 .container {
-  min-height: 100svh;
+	min-height: 100svh;
 }
 
 ul {
-  list-style: none;
-  gap: 3px;
+	list-style: none;
+	gap: 3px;
 }
 
 li {
-  margin-bottom: 7px;
+	margin-bottom: 7px;
 }
