@@ -1,119 +1,58 @@
-<a name="readme-top"></a>
+# Earthquakes
 
-# 🌍 Earthquakes
+A responsive, accessible web application for exploring earthquakes recorded worldwide during the last 24 hours. Data comes directly from the U.S. Geological Survey (USGS).
 
-A simple web application that displays a list and a map view of recent earthquakes, with the ability to filter by continent. The app uses the USGS API to fetch earthquake data.
+## Live demo
 
-## 📗 Table of Contents
+[Open Earthquakes](https://karayamanemre.github.io/earthquakes/)
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-  - [🔍 Key Features](#key-features)
-- [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Usage](#usage)
-- [👥 Authors](#authors)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+## Features
 
-## 📖 About the Project <a name="about-project"></a>
+- Live USGS earthquake feed with automatic refresh
+- List and interactive Leaflet map views
+- Continent and minimum-magnitude filters
+- Shareable event detail URLs backed by the USGS event API
+- Persistent light and dark themes
+- Responsive layout, keyboard-accessible cards and visible loading/error states
+- No runtime framework or build step required
 
-Earthquakes is a web application that displays a list and a map view of recent earthquakes around the world. Users can filter the earthquakes by continent to see only the relevant information. The app uses the USGS API to fetch real-time earthquake data.
+## Local development
 
-## 🛠 Built With <a name="built-with"></a>
-
-- [JavaScript](https://www.javascript.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Leaflet.js](https://leafletjs.com/)
-- [USGS API](https://earthquake.usgs.gov/fdsnws/event/1/)
-
-## 🔍 Key Features <a name="key-features"></a>
-
-- List and map view of earthquakes
-- Filter earthquakes by continent
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Earthquakes](https://karayamanemre.github.io/earthquakes/)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 💻 Getting Started <a name="getting-started"></a>
-
-To get started with the app, follow these steps.
-
-### Prerequisites
-
-- A modern web browser (e.g., Google Chrome, Mozilla Firefox, Safari, Microsoft Edge)
-
-### Installation
-
-1. Clone the Github repository to your local machine:
+ES modules must be served over HTTP rather than opened directly from the filesystem.
 
 ```sh
-  git clone https://github.com/karayamanemre/earthquakes.git
+git clone https://github.com/karayamanemre/earthquakes.git
+cd earthquakes
+npm install
+python3 -m http.server 4173
 ```
 
-Navigate to the project directory in your terminal and run the following command to install the app's dependencies:
+Then open `http://localhost:4173`.
+
+## Checks
 
 ```sh
-  npm install
+npm run check
 ```
 
-### Usage
+The test suite covers representative continent coordinates, the international date line, magnitude filtering and malformed API entries.
 
-Open the index.html file in your web browser.
+## Technology
 
-### Run tests
+- Modern JavaScript modules
+- CSS custom properties
+- [Leaflet](https://leafletjs.com/)
+- [USGS Earthquake Hazards Program](https://earthquake.usgs.gov/)
+- OpenStreetMap map tiles
 
-- No tests included in this project.
+## Data and attribution
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Earthquake records are provided by the [U.S. Geological Survey](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php). Map tiles are provided by OpenStreetMap contributors. This project is not an official USGS product.
 
-## 👥 Authors <a name="authors"></a>
+## Author
 
-👤 **Emre Karayaman**
+Emre Karayaman — [GitHub](https://github.com/karayamanemre)
 
-- GitHub: [Emre Karayaman](https://github.com/karayamanemre)
-- LinkedIn: [Emre Karayaman](https://www.linkedin.com/in/emre-karayaman-a7b45b243/)
+## License
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🔭 Future Features <a name="future-features"></a>
-
-- **Filter by magnitude.**
-- **Filter by country.**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🤝 Contributing <a name="contributing"></a>
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## ⭐️ Show your support <a name="support"></a>
-
-- If you like this project please give it a star ⭐️.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
--
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 📝 License <a name="license"></a>
-
-This project is [MIT](./LICENSE) licensed.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[MIT](LICENSE) © Emre Karayaman

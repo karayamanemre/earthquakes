@@ -1,86 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			http-equiv="X-UA-Compatible"
-			content="IE=edge" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0" />
-		<title>Earthquake Map View</title>
-		<link
-			rel="stylesheet"
-			href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-			integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-			crossorigin="" />
-		<link
-			href="output.css"
-			rel="stylesheet" />
-		<style>
-			#map {
-				margin-top: 50px;
-				height: 400px;
-			}
-		</style>
-	</head>
-	<body class="max-h-screen bg-gray-200">
-		<header
-			class="sticky top-0 z-50 flex items-center justify-between px-4 py-4 text-white bg-gray-800 md:px-48">
-			<h1
-				class="text-xl font-bold sm:text-lg"
-				href="#">
-				Earthquakes
-			</h1>
-		</header>
-		<div class="container px-4 py-4 mx-auto my-4 md:px-20">
-			<h2 class="mb-4 text-xl font-bold text-center">Earthquake Map</h2>
-			<a
-				href="index.html"
-				class="flex items-center p-1 transition-all duration-500 bg-gray-200 rounded-md hover:bg-gray-300 w-max"
-				><svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="icon icon-tabler icon-tabler-list"
-					width="26"
-					height="26"
-					viewBox="0 0 24 24"
-					stroke-width="2"
-					stroke="#000000"
-					fill="none"
-					stroke-linecap="round"
-					stroke-linejoin="round">
-					<path
-						stroke="none"
-						d="M0 0h24v24H0z"
-						fill="none" />
-					<path d="M9 6l11 0" />
-					<path d="M9 12l11 0" />
-					<path d="M9 18l11 0" />
-					<path d="M5 6l0 .01" />
-					<path d="M5 12l0 .01" />
-					<path d="M5 18l0 .01" />
-				</svg>
-				<span class="ml-2 text-lg">List View</span></a
-			>
-			<div class="w-full p-2 mt-2 bg-white rounded-lg shadow-lg">
-				<div
-					id="map"
-					class="border-2 border-gray-300 rounded-lg drop-shadow-xl"></div>
-			</div>
-		</div>
-		<footer
-			class="flex items-center justify-between px-4 py-4 text-white bg-gray-800 md:px-48">
-			<a
-				class="text-white"
-				href="https://earthquake.usgs.gov/"
-				target="_blank"
-				>Data provided by USGS</a
-			>
-		</footer>
-		<script
-			src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-			integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-			crossorigin=""></script>
-		<script src="map.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="View earthquakes recorded during the last 24 hours on an interactive map." />
+    <title>Earthquake map — Live global activity</title>
+    <script>document.documentElement.dataset.theme=localStorage.getItem("earthquakes-theme")||((matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light")</script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3ynhtL5S9/Me8BTSbKJQNN4Z2Z7kI=" crossorigin="" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">⌁</span><span>Earthquakes</span></a>
+      <nav class="header-actions" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">List</a><a class="nav-link active" href="map.html" aria-current="page">Map</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"><span data-theme-icon aria-hidden="true">◐</span><span class="theme-label" data-theme-label>Theme</span></button>
+      </nav>
+    </header>
+    <main id="main-content" class="page-shell">
+      <section class="compact-hero"><p class="eyebrow">GLOBAL VIEW · LAST 24 HOURS</p><h1>Activity map</h1><p>Marker size reflects magnitude. Select a marker to open the event details.</p></section>
+      <section class="toolbar map-toolbar" aria-label="Map filters">
+        <label class="field" for="continent-selector"><span>Continent</span><select id="continent-selector"><option value="all">All continents</option><option value="north-america">North America</option><option value="south-america">South America</option><option value="europe">Europe</option><option value="africa">Africa</option><option value="asia">Asia</option><option value="oceania">Oceania</option></select></label>
+        <div class="view-summary" aria-live="polite"><strong id="result-count">—</strong><span id="last-updated">Loading map…</span></div>
+        <div class="legend" aria-label="Magnitude legend"><span><i class="dot minor"></i>Minor</span><span><i class="dot moderate"></i>Moderate</span><span><i class="dot major"></i>Major</span></div>
+      </section>
+      <div id="status" class="status-panel" role="status"><span class="loader" aria-hidden="true"></span><p>Building the activity map…</p></div>
+      <section id="map-panel" class="map-panel" hidden><div id="map" aria-label="Interactive earthquake map"></div></section>
+    </main>
+    <footer class="site-footer"><p>© <span data-current-year></span> Emre Karayaman. All rights reserved.</p><p>Earthquake data provided by the <a href="https://earthquake.usgs.gov/" target="_blank" rel="noopener noreferrer">U.S. Geological Survey (USGS)</a>.</p></footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script type="module" src="js/map-page.js"></script>
+  </body>
 </html>

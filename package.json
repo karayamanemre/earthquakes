@@ -1,5 +1,12 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.2.7"
-  }
+  "name": "earthquakes",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "lint": "node --check js/*.js && node --check test/*.js",
+    "check": "npm run lint && npm test"
+  },
+  "engines": { "node": ">=20" }
 }
