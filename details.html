@@ -1,133 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			http-equiv="X-UA-Compatible"
-			content="IE=edge" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0" />
-		<title>Earthquake Details</title>
-		<link
-			rel="stylesheet"
-			href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-			integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-			crossorigin="" />
-		<link
-			href="output.css"
-			rel="stylesheet" />
-		<style>
-			#map {
-				height: 400px;
-			}
-		</style>
-	</head>
-	<body class="bg-gray-200">
-		<header
-			class="sticky top-0 z-50 flex items-center justify-between px-4 py-4 text-white bg-gray-800 md:px-48">
-			<h1
-				class="text-xl font-bold sm:text-lg"
-				href="#">
-				Earthquakes
-			</h1>
-		</header>
-		<div class="container px-4 py-4 mx-auto my-4 md:px-20">
-			<h2 class="mb-4 text-xl font-bold text-center">Earthquake Details</h2>
-			<div class="flex items-center justify-between gap-4 md:justify-start">
-				<a
-					href="index.html"
-					class="flex items-center p-1 transition-all duration-500 bg-gray-200 rounded-md hover:bg-gray-300 w-max"
-					><svg
-						xmlns="http://www.w3.org/2000/svg"
-						class="icon icon-tabler icon-tabler-list"
-						width="26"
-						height="26"
-						viewBox="0 0 24 24"
-						stroke-width="2"
-						stroke="#000000"
-						fill="none"
-						stroke-linecap="round"
-						stroke-linejoin="round">
-						<path
-							stroke="none"
-							d="M0 0h24v24H0z"
-							fill="none" />
-						<path d="M9 6l11 0" />
-						<path d="M9 12l11 0" />
-						<path d="M9 18l11 0" />
-						<path d="M5 6l0 .01" />
-						<path d="M5 12l0 .01" />
-						<path d="M5 18l0 .01" />
-					</svg>
-					<span class="ml-2 text-lg">List View</span></a
-				>
-				<a
-					href="map.html"
-					class="flex items-center p-1 transition-all duration-500 bg-gray-200 rounded-md hover:bg-gray-300 w-max"
-					><svg
-						xmlns="http://www.w3.org/2000/svg"
-						class="icon icon-tabler icon-tabler-map-2"
-						width="26"
-						height="26"
-						viewBox="0 0 24 24"
-						stroke-width="2"
-						stroke="#000000"
-						fill="none"
-						stroke-linecap="round"
-						stroke-linejoin="round">
-						<path
-							stroke="none"
-							d="M0 0h24v24H0z"
-							fill="none" />
-						<path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5" />
-						<path d="M9 4v13" />
-						<path d="M15 7v5.5" />
-						<path
-							d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z" />
-						<path d="M19 18v.01" />
-					</svg>
-					<span class="ml-2 text-lg">Map View</span></a
-				>
-			</div>
-			<div class="p-2 mx-auto my-4 bg-white rounded-lg shadow-lg">
-				<div class="card">
-					<h2
-						id="earthquake-location"
-						class="mb-2 text-2xl font-bold"></h2>
-					<p
-						id="earthquake-time"
-						class="mb-2 text-lg text-gray-700"></p>
-					<p
-						id="earthquake-magnitude"
-						class="mb-2 text-lg text-gray-700"></p>
-					<p
-						id="earthquake-depth"
-						class="mb-2 text-lg text-gray-700"></p>
-					<p
-						id="earthquake-tsunami"
-						class="mb-2 text-lg text-gray-700"></p>
-					<div
-						id="map"
-						class="border-2 border-gray-300 rounded-lg drop-shadow-xl"></div>
-				</div>
-			</div>
-		</div>
-		<footer
-			class="flex items-center justify-between p-4 text-white bg-gray-800">
-			<a
-				class="text-white"
-				href="https://earthquake.usgs.gov/"
-				target="_blank"
-				>Data provided by USGS</a
-			>
-		</footer>
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-		<script
-			src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-			integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-			crossorigin=""></script>
-		<script src="details.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Detailed information for a USGS earthquake event." />
+    <title>Earthquake details</title>
+    <script>document.documentElement.dataset.theme=localStorage.getItem("earthquakes-theme")||((matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light")</script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3ynhtL5S9/Me8BTSbKJQNN4Z2Z7kI=" crossorigin="" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">⌁</span><span>Earthquakes</span></a><nav class="header-actions" aria-label="Primary navigation"><a class="nav-link" href="index.html">List</a><a class="nav-link" href="map.html">Map</a><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"><span data-theme-icon aria-hidden="true">◐</span><span class="theme-label" data-theme-label>Theme</span></button></nav></header>
+    <main id="main-content" class="page-shell detail-shell">
+      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Back to recent events</a>
+      <div id="status" class="status-panel" role="status"><span class="loader" aria-hidden="true"></span><p>Loading event details…</p></div>
+      <article id="detail-content" hidden>
+        <header class="detail-header"><div><p class="eyebrow" id="event-id">USGS EVENT</p><h1 id="earthquake-location"></h1><p id="earthquake-time" class="detail-time"></p></div><span id="magnitude-badge" class="magnitude-badge"></span></header>
+        <dl class="metric-grid"><div><dt>Magnitude</dt><dd id="earthquake-magnitude"></dd></div><div><dt>Depth</dt><dd id="earthquake-depth"></dd></div><div><dt>Coordinates</dt><dd id="earthquake-coordinates"></dd></div><div><dt>Tsunami warning</dt><dd id="earthquake-tsunami"></dd></div></dl>
+        <section class="map-panel detail-map"><div id="map" aria-label="Earthquake epicenter map"></div></section>
+        <div class="detail-actions"><a id="usgs-link" class="button primary" target="_blank" rel="noopener noreferrer">View official USGS record <span aria-hidden="true">↗</span></a><button id="share-button" class="button secondary" type="button">Copy share link</button><span id="share-feedback" role="status"></span></div>
+      </article>
+    </main>
+    <footer class="site-footer"><p>© <span data-current-year></span> Emre Karayaman. All rights reserved.</p><p>Earthquake data provided by the <a href="https://earthquake.usgs.gov/" target="_blank" rel="noopener noreferrer">U.S. Geological Survey (USGS)</a>.</p></footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script type="module" src="js/details-page.js"></script>
+  </body>
 </html>
