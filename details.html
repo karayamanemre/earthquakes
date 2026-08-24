@@ -6,7 +6,7 @@
     <meta name="description" content="Detailed information for a USGS earthquake event." />
     <title>Earthquake details</title>
     <script>document.documentElement.dataset.theme=localStorage.getItem("earthquakes-theme")||((matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light")</script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3ynhtL5S9/Me8BTSbKJQNN4Z2Z7kI=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -15,7 +15,7 @@
     <main id="main-content" class="page-shell detail-shell">
       <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Back to recent events</a>
       <div id="status" class="status-panel" role="status"><span class="loader" aria-hidden="true"></span><p>Loading event details…</p></div>
-      <article id="detail-content" hidden>
+      <article id="detail-content">
         <header class="detail-header"><div><p class="eyebrow" id="event-id">USGS EVENT</p><h1 id="earthquake-location"></h1><p id="earthquake-time" class="detail-time"></p></div><span id="magnitude-badge" class="magnitude-badge"></span></header>
         <dl class="metric-grid"><div><dt>Magnitude</dt><dd id="earthquake-magnitude"></dd></div><div><dt>Depth</dt><dd id="earthquake-depth"></dd></div><div><dt>Coordinates</dt><dd id="earthquake-coordinates"></dd></div><div><dt>Tsunami warning</dt><dd id="earthquake-tsunami"></dd></div></dl>
         <section class="map-panel detail-map"><div id="map" aria-label="Earthquake epicenter map"></div></section>
@@ -23,7 +23,7 @@
       </article>
     </main>
     <footer class="site-footer"><p>© <span data-current-year></span> Emre Karayaman. All rights reserved.</p><p>Earthquake data provided by the <a href="https://earthquake.usgs.gov/" target="_blank" rel="noopener noreferrer">U.S. Geological Survey (USGS)</a>.</p></footer>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
     <script type="module" src="js/details-page.js"></script>
   </body>
 </html>
